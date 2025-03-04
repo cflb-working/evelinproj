@@ -18,13 +18,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from qualidade import views
 
 urlpatterns = [
     path('appsite/api/', include('appsite.urls')),
     path('', include('website.urls')),
     path('admin/', admin.site.urls), 
-    path('qualidade/', include('qualidade.urls')), 
 ]
 
 if settings.DEBUG:
