@@ -27,8 +27,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
       run: |
-        ip -br -c a
-        pg_isready -h db -U myuser
+        ifconfig
 
     steps:
     - name: Wait for database to be ready
