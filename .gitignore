@@ -175,3 +175,11 @@ app-proj/packhousecontroll/db.sqlite3
 
 migrations/
 app-proj/packhousecontroll/staticfiles/
+app-proj/packhousecontroll/qualidade
+app-proj/packhousecontroll/website/
+
+
+
+# scripst
+.stop-env.sh.swp
+start-env.sh
