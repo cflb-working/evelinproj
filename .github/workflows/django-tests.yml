@@ -39,8 +39,7 @@ jobs:
     - name: Install dependencies
       run: |
         ls -las 
-        pwd
-        cd app-proj/packhousecontroll
+        cd $(pwd)/packhousecontroll
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
