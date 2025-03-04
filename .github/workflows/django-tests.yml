@@ -38,6 +38,10 @@ jobs:
           echo "Waiting for PostgreSQL..."
           sleep 2
         done
+
+    - name: Check PostgreSQL logs
+      run: docker logs $(docker ps -q --filter "ancestor=postgres:latest")
+
     - name: Checkout code
       uses: actions/checkout@v2
 
