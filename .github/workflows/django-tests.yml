@@ -42,6 +42,9 @@ jobs:
     - name: Check PostgreSQL logs
       run: docker logs $(docker ps -q --filter "ancestor=postgres:latest")
 
+    - name: Test Hostname Resolution (Debug) # Added debugging step
+      run: ping -c 3 db
+
     - name: Checkout code
       uses: actions/checkout@v2
 
