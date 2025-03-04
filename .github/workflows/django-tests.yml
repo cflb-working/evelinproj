@@ -40,7 +40,7 @@ jobs:
       run: |
         ls -las 
         pwd
-        cd evelinproj/app-proj/packhousecontroll
+        cd app-proj/packhousecontroll
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
