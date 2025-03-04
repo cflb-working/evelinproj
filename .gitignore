@@ -169,3 +169,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+app-proj/packhousecontroll/db.sqlite3
+*.pyc
+
+migrations/
+app-proj/packhousecontroll/staticfiles/

@@ -1,0 +1,21 @@
+# Dockerfile
+FROM python:3.13.2
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file
+COPY ./requirements.txt .
+
+# Install dependencies
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+# Copy the project files
+COPY . .
+
+RUN python manage.py collectstatic --noinput
+# Expose the port
+EXPOSE 8000
+
+# Run the application
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "packhousecontroll.wsgi:application"]
