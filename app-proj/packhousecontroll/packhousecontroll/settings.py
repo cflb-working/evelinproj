@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'website.apps.WebsiteConfig',
-    'qualidade.apps.QualidadeConfig',
+    #'website.apps.WebsiteConfig',
+    #'qualidade.apps.QualidadeConfig',
     'appsite.apps.AppsiteConfig',
 ]
 
