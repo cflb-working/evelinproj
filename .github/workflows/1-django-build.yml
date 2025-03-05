@@ -1,4 +1,4 @@
-name: Build and Publish Docker Image
+name: Django CI -  Build Image
 
 on:
   push:
@@ -30,4 +30,3 @@ jobs:
         context: ./app-proj/packhousecontroll 
         push: true
         tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-     
