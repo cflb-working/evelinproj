@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout code
       uses: actions/checkout@v2        
 
@@ -22,4 +21,4 @@ jobs:
 
     - name: Run migrations
       run: |
-        curl 0.0.0.0.0:8000
+        curl 0.0.0.0:8000

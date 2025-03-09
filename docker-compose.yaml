@@ -15,7 +15,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   web:
-    build: ./app-proj/packhousecontroll/
+    image: ghcr.io/cflb-working/evelinproj:latest
     container_name: django_app
     restart: always
     depends_on:
