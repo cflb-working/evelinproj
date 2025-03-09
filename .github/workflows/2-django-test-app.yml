@@ -1,0 +1,21 @@
+name: Django CI -  Tests Appçlication (migrates)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check PostgreSQL logs
+      run: docker compose up --build -d
+
+    - name: Run migrations
+      run: |
+        curl 0.0.0.0.0:8000
