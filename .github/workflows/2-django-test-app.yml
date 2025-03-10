@@ -1,6 +1,10 @@
-name: Docker Compose Test
+name: Test Application
 
 on:
+  workflow_run:
+    workflows: ["Build Images"]
+    types:
+      - completed
   push:
     branches:
       - main
