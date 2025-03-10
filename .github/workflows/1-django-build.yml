@@ -1,4 +1,4 @@
-name: Django CI -  Build Image
+name: Build Images
 
 on:
   push:
