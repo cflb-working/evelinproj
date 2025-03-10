@@ -62,7 +62,7 @@ jobs:
     - name: Run migrations
       run: |
         cd $(pwd)/app-proj/packhousecontroll
-        python manage.py migrate
+        sh scripts/entrypoint.sh
 
     - name: Run tests
       run: |
