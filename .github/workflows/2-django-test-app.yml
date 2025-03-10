@@ -26,6 +26,7 @@ jobs:
 
       - name: Subir containers com Docker Compose
         run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
           docker compose up -d
           sleep 10  # Aguarda um tempo para os serviços subirem
 
