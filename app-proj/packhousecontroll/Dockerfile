@@ -13,10 +13,6 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 # Copy the project files
 COPY . .
 
-#RUN python manage.py collectstatic --noinput
-    #python manage.py makemigrations && \
-    #python manage.py migrate
-
 # Expose the port
 EXPOSE 8000
 
