@@ -2,9 +2,10 @@
 set -e
 
 echo "Aguardando o banco de dados..."
-/wait-for-it.sh db:5432 --timeout=30 --strict -- echo "Banco de dados está pronto!"
+scripts/wait-for-it.sh db:5432 --timeout=30 --strict -- echo "Banco de dados está pronto!"
 
 echo "Aplicando migrações..."
+python manage.py collectstatic --noinput
 python manage.py migrate
 
 echo "Criando superusuário..."

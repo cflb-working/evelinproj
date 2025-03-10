@@ -1,4 +1,4 @@
-name: Django CI -  Tests Appçlication (migrates)
+name: Docker Compose Test
 
 on:
   push:
@@ -9,16 +9,28 @@ on:
       - main
 
 jobs:
-  test-app:
+  test-docker-compose:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2        
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-    - name: Check PostgreSQL logs
-      run: docker compose up --build -d
+      - name: Configurar Docker Compose
+        run: |
+          docker compose version  # Verifica se está instalado
 
-    - name: Run migrations
-      run: |
-        curl 0.0.0.0:8000
+      - name: Subir containers com Docker Compose
+        run: |
+          docker compose up -d
+          sleep 10  # Aguarda um tempo para os serviços subirem
+
+      - name: Verificar se os containers estão rodando
+        run: docker ps -a
+
+      - name: Testar endpoint (opcional)
+        run: |
+          curl --fail http://localhost:8000 || exit 1
+
+      - name: Parar e remover containers
+        run: docker compose down
