@@ -32,4 +32,4 @@ jobs:
       with:
         context: ./app-proj/packhousecontroll 
         push: true
-        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$IMAGE_TAG
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
