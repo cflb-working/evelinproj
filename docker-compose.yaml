@@ -16,7 +16,7 @@ services:
 
   web:
     #build: app-proj/packhousecontroll/
-    image: ghcr.io/cflb-working/evelinproj:latest
+    image: ghcr.io/cflb-working/evelinproj:$IMAGE_TAG
     container_name: django_app
     restart: always
     depends_on:
