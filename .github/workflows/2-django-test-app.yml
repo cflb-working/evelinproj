@@ -34,7 +34,7 @@ jobs:
 
       - name: Testar endpoint (opcional)
         run: |
-          curl --fail http://0.0.0.0:8000 || exit 1
+          curl --fail http://0.0.0.0:8000/appsite/api/ || exit 1
 
       - name: Parar e remover containers
         run: docker compose down
