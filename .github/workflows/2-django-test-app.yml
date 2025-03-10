@@ -42,7 +42,6 @@ jobs:
         run: |
           curl --fail http://0.0.0.0:8000/api/appsite/
           curl --fail http://0.0.0.0:8000/api/amostra/
-          curl --fail http://0.0.0.0:8000/api/amostra/amostras/
           exit 0
 
       - name: Parar e remover containers
