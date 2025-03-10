@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #'website.apps.WebsiteConfig',
-    #'qualidade.apps.QualidadeConfig',
+    'amostra.apps.AmostraConfig',
     'appsite.apps.AppsiteConfig',
 ]
 
