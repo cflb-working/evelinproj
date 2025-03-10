@@ -1,8 +1,13 @@
 #!/bin/sh
 set -e
 
-echo "Aguardando o banco de dados..."
-scripts/wait-for-it.sh db:5432 --timeout=30 --strict -- echo "Banco de dados está pronto!"
+echo "Verificando se o banco de dados será usado..."
+if [ "$USE_POSTGRES" = "true" ]; then
+    echo "Aguardando o banco de dados..."
+    scripts/wait-for-it.sh db:5432 --timeout=30 --strict -- echo "Banco de dados está pronto!"
+else
+    echo "Databse de Testes. SQLite"
+fi
 
 echo "Aplicando migrações..."
 python manage.py collectstatic --noinput
