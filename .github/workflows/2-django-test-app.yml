@@ -38,9 +38,12 @@ jobs:
       - name: Verificar se os containers estão rodando
         run: docker ps -a
 
-      - name: Testar endpoint (opcional)
+      - name: Testar endpoints (opcional)
         run: |
-          curl --fail http://0.0.0.0:8000/appsite/api/ || exit 1
+          curl --fail http://0.0.0.0:8000/api/appsite/
+          curl --fail http://0.0.0.0:8000/api/amostra/
+          curl --fail http://0.0.0.0:8000/api/amostra/amostras/
+          exit 0
 
       - name: Parar e remover containers
         run: docker compose down
