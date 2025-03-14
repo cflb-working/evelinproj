@@ -15,13 +15,14 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   web:
-    #build: app-proj/packhousecontroll/
-    image: ghcr.io/cflb-working/evelinproj:$IMAGE_TAG
+    build: app-proj/packhousecontroll
+    #image: ghcr.io/cflb-working/evelinproj:$IMAGE_TAG
     container_name: django_app
     restart: always
     depends_on:
       - db
     environment:
+      USE_POSTGRES: true
       DATABASE_NAME: packhcontroll
       DATABASE_USER: root
       DATABASE_PASSWORD: 123uyt123980

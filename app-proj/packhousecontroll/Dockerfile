@@ -4,8 +4,14 @@ FROM python:3.13.2
 # Set the working directory
 WORKDIR /app/app-proj/packhousecontroll/
 
+# Instala dependências do sistema
+RUN apt-get update && apt-get install -y \
+    libselinux1-dev \
+    libsemanage-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copy the requirements file
-COPY ./requirements.txt .
+COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
